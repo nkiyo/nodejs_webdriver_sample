@@ -15,13 +15,13 @@ async function sample() {
         ]
     });
     const driver = await new Builder().withCapabilities(capabilities).build();
-    await driver.get('http://google.com/');
-    driver.quit();
+    await driver.get('https://tenki.jp/forecast/6/31/6310/28100/?selected=tenki&date=0');
+
+    // TODO 何らかの情報をスクレイピングしてstdoutに出力する
+    const temp = By.xpath('//section[@class="today-weather"]//dd[@class="high-temp temp"]/span[@class="value"]')
+    console.log(temp);
+
+    //driver.quit();
 }
-
-
-//const driver = new Builder().build();
-//const driver = await new Builder().build();
-//driver.quit();
 
 sample();
